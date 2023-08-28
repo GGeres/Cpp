@@ -7,8 +7,7 @@ int main(){
     cout<< "************************************" << endl;
 
     int numero_secreto = 42;
-    cout<< "O numero secreto e "<<numero_secreto<<". Nao conte a ninguem."<<endl;
-
+    
     int chute;
     cout<<"Qual e o seu chute? ";
     cin>> chute;
@@ -16,11 +15,16 @@ int main(){
     cout<<"O valor do seu chute e:"<<chute<< endl;
 
     if(chute == numero_secreto){
-        cout<<"Voce acertou o numero secreto"
+        cout<<"Voce acertou o numero secreto"<<endl;
     }
-    else{
-        cout<<"Voce errou, tente novamente. "
+    else if(chute > numero_secreto){
+        cout<<"Seu chute foi maior que o numero secreto"<<endl;
+    }else{
+        cout<<"Seu chute foi menor que o numero secreto"<<endl;
     }
+
+        
+    
 
 
 }
