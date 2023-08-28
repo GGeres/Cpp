@@ -15,11 +15,12 @@ int main(){
     cout<<"O valor do seu chute e:"<<chute<< endl;
 
     bool acertou = chute == numero_secreto;
+    bool maior = chute > numero_secreto;
 
     if(acertou){
         cout<<"Voce acertou o numero secreto"<<endl;
     }
-    else if(chute > numero_secreto){
+    else if(maior){
         cout<<"Seu chute foi maior que o numero secreto"<<endl;
     }else{
         cout<<"Seu chute foi menor que o numero secreto"<<endl;
