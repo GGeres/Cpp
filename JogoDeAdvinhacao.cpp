@@ -14,7 +14,9 @@ int main(){
 
     cout<<"O valor do seu chute e:"<<chute<< endl;
 
-    if(chute == numero_secreto){
+    bool acertou = chute == numero_secreto;
+
+    if(acertou){
         cout<<"Voce acertou o numero secreto"<<endl;
     }
     else if(chute > numero_secreto){
