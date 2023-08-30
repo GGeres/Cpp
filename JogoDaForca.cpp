@@ -1,4 +1,5 @@
 #include<iostream>
+#include <map>
 using namespace std;
 const string P_SECRETA = "MELANCIA";
 map<char, bool> chutou;
@@ -14,8 +15,6 @@ bool letra_existe (char chute){
 
 int main(){
     
-    cout<< P_SECRETA << endl;
-
     bool nao_acerto = true;
     bool nao_enforcou = true;
 
@@ -32,6 +31,8 @@ int main(){
 
         char chute;
         cin >> chute;
+
+        chutou[chute] = true;
 
         if(letra_existe(chute)){
             cout<<"Voce acertou!! Seu chute esta na palavra."<<endl;
