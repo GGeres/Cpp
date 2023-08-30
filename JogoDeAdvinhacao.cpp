@@ -9,6 +9,8 @@ int main(){
     const int NUMERO_SECRETO = 42;
     bool nao_acertou = true;
     int tentativas = 0;
+
+    double pontos = 1000.0;
     
     while(nao_acertou){
         tentativas++;
