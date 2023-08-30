@@ -28,30 +28,25 @@ bool nao_enforcou(){
     return chutes_errados.size() < 5;
 }    
 
-int main(){
+void imprime_cabecalho(){
     cout<<"***************************************"<< endl;
     cout<<"******        Jogo da Forca       *****"<< endl;
     cout<<"***************************************"<< endl;
     cout<<endl;
+    }
 
-    bool nao_acertou = true;
-    bool nao_enforcou = true;
+void imprime_erros(){
+    cout << "Chutes errados: ";
+    for(char letra: chutes_errados){
+        cout << letra << " ";
+    }
+    cout << endl;
+}
 
-    cout<<"Seu chute: ";
-    char chute;
-    cin>> chute;
-
-    chutou[chute] = chute;
-
-    while(nao_acertou() && nao_enforcou()){
-        cout << "Chutes errados: ";
-        for(char letra: chutes_errados){
-            cout << letra << " ";
-        }
-        cout << endl;
-        
+void imprime_palavra(){
         for (char letra : P_SECRETA){
-            if(chutou[letra]){
+            if(chutou[letra])
+            {
                 cout<< letra<<" ";
             }
             else{
@@ -59,8 +54,10 @@ int main(){
             }
         }
         cout<<endl;
+}
 
-        char chute;
+void chuta(){
+    char chute;
         cin >> chute;
 
         chutou[chute] = true;
@@ -73,5 +70,29 @@ int main(){
             chutes_errados.push_back(chute);
         }
         cout<<endl;
+}
+
+int main(){
+    imprime_cabecalho();
+    cout<<"Seu chute: ";
+    char chute;
+    cin>> chute;
+
+    chutou[chute] = chute;
+
+    while(nao_acertou() && nao_enforcou()){
+        imprime_erros();
+        imprime_palavra();
+        chuta();        
     }
+    
+    cout<<"Fim de Jogo!!"<< endl;
+    cout<<"A palavra era: "<<P_SECRETA <<endl;
+    if (nao_acertou()){
+        cout<<"Voce perdeu. Tente novamente."<<endl;
+    }
+    else{
+        cout<<"Parabens!! Voce acertou a palavra secreta."<<endl;
+    }
+    
 }
