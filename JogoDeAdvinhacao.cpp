@@ -45,8 +45,9 @@ int main(){
         bool maior = chute > NUMERO_SECRETO;
 
         if(acertou){
-        cout<<"Voce acertou o numero secreto"<<endl;
+        cout<<"Parabens! Voce acertou o numero secreto"<<endl;
         nao_acertou = false;
+        break;
         }
         else if(maior){
         cout<<"Seu chute foi maior que o numero secreto"<<endl;
