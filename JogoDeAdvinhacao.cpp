@@ -7,13 +7,23 @@ int main(){
     cout<< "************************************" << endl;
 
     cout<<"Escolha o nivel de dificuldade: "<< endl;
-    cout<<"Facil (1), Medio (2) ou Dificil (3)";
+    cout<<"Facil (1), Medio (2) ou Dificil (3)"<< endl;
 
     char dificuldade;
     cin >> dificuldade;
 
-
-
+    int n_tentativas;
+    if(dificuldade == '1'){
+        n_tentativas = 15;
+    }
+    else if (dificuldade == '2')
+    {
+        n_tentativas = 10;
+    }
+    else{
+        n_tentativas = 5;
+    }
+    
     const int NUMERO_SECRETO = 42;
     bool nao_acertou = true;
     int tentativas = 0;
