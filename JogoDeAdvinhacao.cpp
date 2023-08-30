@@ -6,6 +6,14 @@ int main(){
     cout<< "* Bem-Vindos ao Jogo de Advinhacao *" << endl;
     cout<< "************************************" << endl;
 
+    cout<<"Escolha o nivel de dificuldade: "<< endl;
+    cout<<"Facil (1), Medio (2) ou Dificil (3)";
+
+    char dificuldade;
+    cin >> dificuldade;
+
+    
+
     const int NUMERO_SECRETO = 42;
     bool nao_acertou = true;
     int tentativas = 0;
@@ -41,7 +49,5 @@ int main(){
     cout<<"Fim de Jogo!!"<<endl;
     cout<<"Voce acertou o numero secreto em "<<tentativas<<" tentativas."<<endl;
     cout.precision(2);
-    cout << fixed;
     cout<<"Sua pontuação foi de "<< pontos <<" pontos.";
-    
 }
