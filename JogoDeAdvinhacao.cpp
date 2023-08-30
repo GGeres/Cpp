@@ -56,8 +56,13 @@ int main(){
     }
 
     cout<<"Fim de Jogo!!"<<endl;
-    cout<<"Voce acertou o numero secreto em "<<tentativas<<" tentativas."<<endl;
-    cout.precision(2);
-    cout<< fixed;
-    cout<<"Sua pontuação foi de "<< pontos <<" pontos.";
+    if (nao_acertou){
+        cout << "Você perdeu! Tente novamente!" << endl;
+    }
+    else {
+        cout<<"Voce acertou o numero secreto em "<<tentativas<<" tentativas." <<endl;
+        cout.precision(2);
+        cout<< fixed;
+        cout<<"Sua pontuação foi de "<< pontos <<" pontos."<<endl;
+    }
 }
