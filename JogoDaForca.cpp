@@ -50,11 +50,10 @@ vector <string> le_arquivo(){
 
         vector<string> p_do_Arquivo;
 
-        for (int i = 0; i < q_palavras; i++)
-        {
+        for (int i = 0; i < q_palavras; i++){
             string p_lida;
             arquivo >> p_lida;
-            cout << "Na linha "<< i <<": "<< p_lida << endl;
+            
             p_do_Arquivo.push_back(p_lida);
         }
         return p_do_Arquivo;
