@@ -109,12 +109,8 @@ void sorteia_palavra(){
 
 int main(){
     imprime_cabecalho();
-    le_arquivo();
-    cout<<"Seu chute: ";
-    char chute;
-    cin>> chute;
 
-    chutou[chute] = chute;
+    le_arquivo();
 
     while(nao_acertou() && nao_enforcou()){
         imprime_erros();
