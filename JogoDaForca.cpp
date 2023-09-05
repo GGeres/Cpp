@@ -2,13 +2,15 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
-const string P_SECRETA = "MELANCIA";
+ string p_secreta = "MELANCIA";
 map<char, bool> chutou;
 vector <char> chutes_errados;
 
 bool letra_existe (char chute){
-    for (char letra : P_SECRETA){
+    for (char letra : p_secreta){
         if(chute == letra){
             return true;
         }
@@ -17,7 +19,7 @@ bool letra_existe (char chute){
 }
 
 bool nao_acertou(){
-    for(char letra : P_SECRETA){
+    for(char letra : p_secreta){
         if (!chutou[letra]) {
             return true;
         }
@@ -67,7 +69,7 @@ void imprime_erros(){
 }
 
 void imprime_palavra(){
-        for (char letra : P_SECRETA){
+        for (char letra : p_secreta){
             if(chutou[letra])
             {
                 cout<< letra<<" ";
@@ -95,6 +97,16 @@ void chuta(){
         cout<<endl;
 }
 
+void sorteia_palavra(){
+    vector <string> palavras = le_arquivo();
+
+    srand(time(NULL));
+    int ind_sorteado = rand() % palavras.size();
+
+    p_secreta = palavras[ind_sorteado];
+
+}
+
 int main(){
     imprime_cabecalho();
     le_arquivo();
@@ -111,7 +123,7 @@ int main(){
     }
     
     cout<<"Fim de Jogo!!"<< endl;
-    cout<<"A palavra era: "<<P_SECRETA <<endl;
+    cout<<"A palavra era: "<< p_secreta <<endl;
     if (nao_acertou()){
         cout<<"Voce perdeu. Tente novamente."<<endl;
     }
