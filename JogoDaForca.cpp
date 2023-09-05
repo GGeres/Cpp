@@ -6,7 +6,7 @@
 #include <ctime>
 #include <cstdlib>
 using namespace std;
- string p_secreta = "MELANCIA";
+string p_secreta = "MELANCIA";
 map<char, bool> chutou;
 vector <char> chutes_errados;
 
@@ -46,7 +46,7 @@ vector <string> le_arquivo(){
     int q_palavras;
     arquivo >> q_palavras;
 
-        cout << "O arquivo possui "<< q_palavras <<" palavras."<<endl;
+        
 
         vector<string> p_do_Arquivo;
 
