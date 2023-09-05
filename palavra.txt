@@ -1,5 +1,6 @@
 5
-abacaxi
-banana
-uva
-morango
+ABACAXI
+UVA
+MORANGO
+MELANCIA
+BANANA
