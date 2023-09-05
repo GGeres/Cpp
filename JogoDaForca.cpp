@@ -53,7 +53,6 @@ vector <string> le_arquivo(){
         for (int i = 0; i < q_palavras; i++){
             string p_lida;
             arquivo >> p_lida;
-            
             p_do_Arquivo.push_back(p_lida);
         }
         return p_do_Arquivo;
