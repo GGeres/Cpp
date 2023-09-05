@@ -110,8 +110,8 @@ void sorteia_palavra(){
 
 int main(){
     imprime_cabecalho();
-
     le_arquivo();
+    sorteia_palavra();
 
     while(nao_acertou() && nao_enforcou()){
         imprime_erros();
