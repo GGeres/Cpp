@@ -36,23 +36,7 @@ void imprime_cabecalho(){
     cout<<endl;
     }
 
-void le_arquivo(){
-    ifstream arquivo;
-    arquivo.open("palavra.txt");
 
-    int q_palavras;
-    arquivo >> q_palavras;
-
-        cout << "O arquivo possui "<< q_palavras <<" palavras."<<endl;
-
-        for (int i = 0; i < q_palavras; i++)
-        {
-            string p_lida;
-            arquivo >> p_lida;
-            cout << "Na linha "<< i <<": "<< p_lida << endl;
-        }
-        
-}
 
 void imprime_erros(){
     cout << "Chutes errados: ";
@@ -93,6 +77,27 @@ void chuta(){
 
 int main(){
     imprime_cabecalho();
+    vector<string> le_arquivo(){
+    ifstream arquivo;
+    arquivo.open("palavra.txt");
+
+    int q_palavras;
+    arquivo >> q_palavras;
+
+        cout << "O arquivo possui "<< q_palavras <<" palavras."<<endl;
+
+        vector<string> p_do_Arquivo;
+
+        for (int i = 0; i < q_palavras; i++)
+        {
+            string p_lida;
+            arquivo >> p_lida;
+            cout << "Na linha "<< i <<": "<< p_lida << endl;
+            p_do_Arquivo.push_back(p_lida);
+        }
+        return p_do_Arquivo;
+        
+    }
     cout<<"Seu chute: ";
     char chute;
     cin>> chute;
