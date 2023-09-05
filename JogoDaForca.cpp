@@ -37,23 +37,8 @@ void imprime_cabecalho(){
     cout<<"******        Jogo da Forca       *****"<< endl;
     cout<<"***************************************"<< endl;
     cout<<endl;
-    }
-
-vector <string> le_arquivo(){
-    ifstream arquivo;
-    arquivo.open("palavra.txt");
-
-    int q_palavras;
-    arquivo >> q_palavras;
-        vector<string> p_do_Arquivo;
-        for (int i = 0; i < q_palavras; i++){
-            string p_lida;
-            arquivo >> p_lida;
-            p_do_Arquivo.push_back(p_lida);
-        }
-        return p_do_Arquivo;
-        
 }
+
 
 void imprime_erros(){
     cout << "Chutes errados: ";
@@ -102,11 +87,29 @@ void sorteia_palavra(){
 
 }
 
+vector <string> le_arquivo(){
+    ifstream arquivo;
+    arquivo.open("palavra.txt");
+
+    int q_palavras;
+    arquivo >> q_palavras;
+        vector<string> p_do_Arquivo;
+        for (int i = 0; i < q_palavras; i++){
+            string p_lida;
+            arquivo >> p_lida;
+            p_do_Arquivo.push_back(p_lida);
+        }
+    arquivo.close();
+    return p_do_Arquivo;
+        
+}
+
+
 int main(){
     imprime_cabecalho();
-    le_arquivo();
+    /*le_arquivo();
     sorteia_palavra();
-
+*/
     while(nao_acertou() && nao_enforcou()){
         imprime_erros();
         imprime_palavra();
