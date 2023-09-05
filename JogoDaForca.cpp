@@ -1,6 +1,7 @@
 #include<iostream>
 #include <map>
 #include <vector>
+#include <fstream>
 using namespace std;
 const string P_SECRETA = "MELANCIA";
 map<char, bool> chutou;
@@ -34,6 +35,24 @@ void imprime_cabecalho(){
     cout<<"***************************************"<< endl;
     cout<<endl;
     }
+
+void le_arquivo(){
+    ifstream arquivo;
+    arquivo.open("palavra.txt");
+
+    int q_palavras;
+    arquivo >> q_palavras;
+
+        cout << "O arquivo possui "<< q_palavras <<" palavras."<<endl;
+
+        for (int i = 0; i < q_palavras; i++)
+        {
+            string p_lida;
+            arquivo >> p_lida;
+            cout << "Na linha "<< i <<": "<< p_lida << endl;
+        }
+        
+}
 
 void imprime_erros(){
     cout << "Chutes errados: ";
