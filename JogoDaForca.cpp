@@ -45,11 +45,7 @@ vector <string> le_arquivo(){
 
     int q_palavras;
     arquivo >> q_palavras;
-
-        
-
         vector<string> p_do_Arquivo;
-
         for (int i = 0; i < q_palavras; i++){
             string p_lida;
             arquivo >> p_lida;
