@@ -92,8 +92,11 @@ vector <string> le_arquivo(){
     arquivo.open("palavra.txt");
 
     int q_palavras;
+
     arquivo >> q_palavras;
+
         vector<string> p_do_Arquivo;
+        
         for (int i = 0; i < q_palavras; i++){
             string p_lida;
             arquivo >> p_lida;
@@ -107,9 +110,9 @@ vector <string> le_arquivo(){
 
 int main(){
     imprime_cabecalho();
-    /*le_arquivo();
+    le_arquivo();
     sorteia_palavra();
-*/
+
     while(nao_acertou() && nao_enforcou()){
         imprime_erros();
         imprime_palavra();
